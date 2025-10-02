@@ -196,74 +196,85 @@ def export_excel(invoice_id):
                      download_name=f"invoice_{invoice.id}.xlsx",
                      mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
-# --- PDF Export (Receipt Style) ---
+# --- PDF Export (Print-ready, dynamic height) ---
 @app.route('/invoice/<int:invoice_id>/pdf')
 @login_required
 def export_pdf(invoice_id):
     invoice = Invoice.query.get_or_404(invoice_id)
     buffer = io.BytesIO()
 
-    # Receipt width (~80mm)
-    receipt_width = 230
-    c = canvas.Canvas(buffer, pagesize=(receipt_width, 1000))
-    y = 950
+    page_width = 420  # half of A4 width
+    line_height = 18
+    top_margin = 30
+    bottom_margin = 40
+    header_height = 120
+    totals_height = 90
 
-    # Company Info
-    c.setFont("Helvetica-Bold", 12)
+    page_height = top_margin + header_height + len(invoice.items)*line_height + totals_height + bottom_margin
+
+    c = canvas.Canvas(buffer, pagesize=(page_width, page_height))
+    y = page_height - top_margin
+
+    # --- Company Info ---
+    c.setFont("Helvetica-Bold", 14)
     c.drawString(10, y, COMPANY['name'])
-    y -= 15
-    c.setFont("Helvetica", 9)
+    y -= 20
+    c.setFont("Helvetica", 10)
     c.drawString(10, y, COMPANY['address'])
-    y -= 12
+    y -= 14
     c.drawString(10, y, COMPANY['phone'])
-    y -= 20
+    y -= 25
 
-    # Invoice Info
-    c.setFont("Helvetica-Bold", 10)
+    # --- Invoice Info ---
+    c.setFont("Helvetica-Bold", 12)
     c.drawString(10, y, f"Invoice #{invoice.id}")
-    y -= 12
-    c.setFont("Helvetica", 9)
+    y -= 16
+    c.setFont("Helvetica", 10)
     c.drawString(10, y, f"Date: {invoice.date_created.strftime('%Y-%m-%d')}")
-    y -= 20
+    y -= 25
 
-    # Table Header
-    c.setFont("Helvetica-Bold", 9)
-    c.drawString(10, y, "Item")
-    c.drawString(120, y, "Qty")
-    c.drawString(160, y, "Price")
-    c.drawString(200, y, "Total")
-    y -= 12
-    c.setFont("Helvetica", 9)
-
-    # Items
-    for item in invoice.items:
-        c.drawString(10, y, item.name[:15])  # truncate long names
-        c.drawString(120, y, str(item.qty))
-        c.drawString(160, y, f"{item.price:.2f}")
-        c.drawString(200, y, f"{item.qty * item.price:.2f}")
-        y -= 12
-
-    subtotal, tax_amount, discount_amount, total = calculate_invoice_totals(invoice)
-    y -= 10
-    c.drawString(160, y, "Subtotal:")
-    c.drawString(200, y, f"{subtotal:.2f}")
-    y -= 12
-    c.drawString(160, y, f"Tax ({invoice.tax_rate}%):")
-    c.drawString(200, y, f"{tax_amount:.2f}")
-    y -= 12
-    c.drawString(160, y, f"Discount ({invoice.discount_rate}%):")
-    c.drawString(200, y, f"{discount_amount:.2f}")
-    y -= 12
+    # --- Table Header ---
     c.setFont("Helvetica-Bold", 10)
-    c.drawString(160, y, "Total:")
-    c.drawString(200, y, f"{total:.2f}")
+    c.drawString(10, y, "Item")
+    c.drawRightString(250, y, "Qty")
+    c.drawRightString(320, y, "Price")
+    c.drawRightString(410, y, "Total")
+    y -= line_height
+    c.setFont("Helvetica", 10)
+
+    # --- Items ---
+    for item in invoice.items:
+        c.drawString(10, y, item.name[:30])
+        c.drawRightString(250, y, str(item.qty))
+        c.drawRightString(320, y, f"{item.price:.2f}")
+        c.drawRightString(410, y, f"{item.qty * item.price:.2f}")
+        y -= line_height
+
+    # --- Totals ---
+    subtotal, tax_amount, discount_amount, total = calculate_invoice_totals(invoice)
+    y -= 15
+    c.setFont("Helvetica-Bold", 10)
+    c.drawRightString(320, y, "Subtotal:")
+    c.drawRightString(410, y, f"{subtotal:.2f}")
+    y -= line_height
+    c.drawRightString(320, y, f"Tax ({invoice.tax_rate}%):")
+    c.drawRightString(410, y, f"{tax_amount:.2f}")
+    y -= line_height
+    c.drawRightString(320, y, f"Discount ({invoice.discount_rate}%):")
+    c.drawRightString(410, y, f"{discount_amount:.2f}")
+    y -= line_height
+    c.drawRightString(320, y, "Total:")
+    c.drawRightString(410, y, f"{total:.2f}")
 
     c.showPage()
     c.save()
     buffer.seek(0)
-    return send_file(buffer, as_attachment=True,
-                     download_name=f"invoice_{invoice.id}.pdf",
-                     mimetype='application/pdf')
+    return send_file(
+        buffer,
+        as_attachment=True,
+        download_name=f"invoice_{invoice.id}.pdf",
+        mimetype='application/pdf'
+    )
 
 # --- Initialize DB and default user ---
 with app.app_context():
