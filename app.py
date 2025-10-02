@@ -8,7 +8,6 @@ from functools import wraps
 from datetime import datetime
 from openpyxl import Workbook
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A4
 
 # --- Flask App Config ---
 app = Flask(__name__)
@@ -157,6 +156,12 @@ def delete_invoice(invoice_id):
     flash("Invoice deleted successfully!", "success")
     return redirect(url_for('index'))
 
+@app.route('/invoice/<int:invoice_id>/view')
+@login_required
+def view_invoice(invoice_id):
+    invoice = Invoice.query.get_or_404(invoice_id)
+    return render_template('view_invoice.html', invoice=invoice)
+
 # --- Excel Export ---
 @app.route('/invoice/<int:invoice_id>/excel')
 @login_required
@@ -166,7 +171,6 @@ def export_excel(invoice_id):
     ws = wb.active
     ws.title = f"Invoice {invoice.id}"
 
-    # Company Info
     ws.append([COMPANY['name']])
     ws.append([COMPANY['address']])
     ws.append([COMPANY['phone']])
@@ -174,7 +178,6 @@ def export_excel(invoice_id):
     ws.append([f"Invoice #{invoice.id}", f"Date: {invoice.date_created.strftime('%Y-%m-%d')}"])
     ws.append([])
 
-    # Headers
     ws.append(['Item', 'Qty', 'Price', 'Subtotal'])
     for item in invoice.items:
         ws.append([item.name, item.qty, item.price, item.qty * item.price])
@@ -193,57 +196,67 @@ def export_excel(invoice_id):
                      download_name=f"invoice_{invoice.id}.xlsx",
                      mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
-# --- PDF Export ---
+# --- PDF Export (Receipt Style) ---
 @app.route('/invoice/<int:invoice_id>/pdf')
 @login_required
 def export_pdf(invoice_id):
     invoice = Invoice.query.get_or_404(invoice_id)
     buffer = io.BytesIO()
-    c = canvas.Canvas(buffer, pagesize=A4)
-    width, height = A4
+
+    # Receipt width (~80mm)
+    receipt_width = 230
+    c = canvas.Canvas(buffer, pagesize=(receipt_width, 1000))
+    y = 950
 
     # Company Info
-    c.setFont("Helvetica-Bold", 16)
-    c.drawString(50, height-50, COMPANY['name'])
-    c.setFont("Helvetica", 10)
-    c.drawString(50, height-70, COMPANY['address'])
-    c.drawString(50, height-85, COMPANY['phone'])
+    c.setFont("Helvetica-Bold", 12)
+    c.drawString(10, y, COMPANY['name'])
+    y -= 15
+    c.setFont("Helvetica", 9)
+    c.drawString(10, y, COMPANY['address'])
+    y -= 12
+    c.drawString(10, y, COMPANY['phone'])
+    y -= 20
 
     # Invoice Info
-    c.setFont("Helvetica-Bold", 12)
-    c.drawString(400, height-50, f"Invoice #{invoice.id}")
-    c.drawString(400, height-70, f"Date: {invoice.date_created.strftime('%Y-%m-%d')}")
-
-    # Table
-    y = height - 120
     c.setFont("Helvetica-Bold", 10)
-    c.drawString(50, y, "Item")
-    c.drawString(250, y, "Qty")
-    c.drawString(300, y, "Price")
-    c.drawString(400, y, "Subtotal")
-    c.setFont("Helvetica", 10)
+    c.drawString(10, y, f"Invoice #{invoice.id}")
+    y -= 12
+    c.setFont("Helvetica", 9)
+    c.drawString(10, y, f"Date: {invoice.date_created.strftime('%Y-%m-%d')}")
     y -= 20
 
+    # Table Header
+    c.setFont("Helvetica-Bold", 9)
+    c.drawString(10, y, "Item")
+    c.drawString(120, y, "Qty")
+    c.drawString(160, y, "Price")
+    c.drawString(200, y, "Total")
+    y -= 12
+    c.setFont("Helvetica", 9)
+
+    # Items
     for item in invoice.items:
-        c.drawString(50, y, item.name)
-        c.drawString(250, y, str(item.qty))
-        c.drawString(300, y, f"{item.price:.2f}")
-        c.drawString(400, y, f"{item.qty * item.price:.2f}")
-        y -= 20
+        c.drawString(10, y, item.name[:15])  # truncate long names
+        c.drawString(120, y, str(item.qty))
+        c.drawString(160, y, f"{item.price:.2f}")
+        c.drawString(200, y, f"{item.qty * item.price:.2f}")
+        y -= 12
 
     subtotal, tax_amount, discount_amount, total = calculate_invoice_totals(invoice)
-    y -= 20
-    c.drawString(300, y, "Subtotal:")
-    c.drawString(400, y, f"{subtotal:.2f}")
-    y -= 15
-    c.drawString(300, y, f"Tax ({invoice.tax_rate}%):")
-    c.drawString(400, y, f"{tax_amount:.2f}")
-    y -= 15
-    c.drawString(300, y, f"Discount ({invoice.discount_rate}%):")
-    c.drawString(400, y, f"{discount_amount:.2f}")
-    y -= 15
-    c.drawString(300, y, "Total:")
-    c.drawString(400, y, f"{total:.2f}")
+    y -= 10
+    c.drawString(160, y, "Subtotal:")
+    c.drawString(200, y, f"{subtotal:.2f}")
+    y -= 12
+    c.drawString(160, y, f"Tax ({invoice.tax_rate}%):")
+    c.drawString(200, y, f"{tax_amount:.2f}")
+    y -= 12
+    c.drawString(160, y, f"Discount ({invoice.discount_rate}%):")
+    c.drawString(200, y, f"{discount_amount:.2f}")
+    y -= 12
+    c.setFont("Helvetica-Bold", 10)
+    c.drawString(160, y, "Total:")
+    c.drawString(200, y, f"{total:.2f}")
 
     c.showPage()
     c.save()
