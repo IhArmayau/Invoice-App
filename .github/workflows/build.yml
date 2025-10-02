@@ -22,12 +22,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller flask bcrypt openpyxl reportlab
 
-      - name: Build EXE with PyInstaller
+      - name: Build EXE
         run: |
           pyinstaller --noconfirm --onefile --add-data "templates;templates" --add-data "static;static" app.py
 
-      - name: Upload EXE artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload EXE
+        uses: actions/upload-artifact@v4  # <-- updated to v4
         with:
           name: Invoice-App-EXE
           path: dist/app.exe
