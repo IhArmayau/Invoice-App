@@ -12,8 +12,8 @@
         .totals table { width: 100%; border: none; }
         .totals td { border: none; padding: 4px 0; }
         .buttons { margin-top: 20px; }
-        .buttons a { text-decoration: none; padding: 8px 12px; background-color: #4CAF50; color: white; border-radius: 4px; margin-right: 5px; }
-        .buttons a.delete { background-color: #f44336; }
+        .buttons a, .buttons button { text-decoration: none; padding: 8px 12px; background-color: #4CAF50; color: white; border-radius: 4px; margin-right: 5px; border: none; cursor: pointer; }
+        .buttons button.delete { background-color: #f44336; }
     </style>
 </head>
 <body>
@@ -62,7 +62,12 @@
         <a href="{{ url_for('export_excel', invoice_id=invoice.id) }}">Export Excel</a>
         <a href="{{ url_for('export_pdf', invoice_id=invoice.id) }}">Export PDF</a>
         <a href="{{ url_for('edit_invoice', invoice_id=invoice.id) }}">Edit</a>
-        <a href="{{ url_for('delete_invoice', invoice_id=invoice.id) }}" class="delete" onclick="return confirm('Are you sure you want to delete this invoice?');">Delete</a>
+
+        <!-- Proper form for Delete -->
+        <form action="{{ url_for('delete_invoice', invoice_id=invoice.id) }}" method="POST" style="display:inline;">
+            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this invoice?');">Delete</button>
+        </form>
+
         <a href="{{ url_for('index') }}">Back</a>
     </div>
 </body>
