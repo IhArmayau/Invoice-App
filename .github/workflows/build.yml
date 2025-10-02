@@ -1,35 +1,33 @@
-name: Build Windows Executable
+name: Build EXE
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pyinstaller
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller flask bcrypt openpyxl reportlab
 
-    - name: Build executable
-      run: |
-        pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" app.py
+      - name: Build EXE with PyInstaller
+        run: |
+          pyinstaller --noconfirm --onefile --add-data "templates;templates" --add-data "static;static" app.py
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: invoice-app-exe
-        path: dist/app.exe
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Invoice-App-EXE
+          path: dist/app.exe
