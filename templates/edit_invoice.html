@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Invoice #{{ invoice.id }}</h2>
+
+<form method="POST" id="invoiceForm">
+    <label>Client Name</label>
+    <input type="text" name="client_name" value="{{ invoice.client_name }}" required>
+
+    <label>Tax Rate (%)</label>
+    <input type="number" name="tax_rate" value="{{ invoice.tax_rate }}" min="0" step="0.01" onchange="calculateTotals()">
+
+    <label>Discount Rate (%)</label>
+    <input type="number" name="discount_rate" value="{{ invoice.discount_rate }}" min="0" step="0.01" onchange="calculateTotals()">
+
+    <table id="itemsTable">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in invoice.items %}
+            <tr>
+                <td><input type="text" name="item_name[]" value="{{ item.name }}" required></td>
+                <td><input type="number" name="item_qty[]" value="{{ item.qty }}" min="1" onchange="calculateTotals()"></td>
+                <td><input type="number" name="item_price[]" value="{{ item.price }}" step="0.01" onchange="calculateTotals()"></td>
+                <td class="row-subtotal">0.00</td>
+                <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" onclick="addRow()">Add Item</button>
+
+    <div class="totals">
+        <p>Subtotal: <span id="subtotal">0.00</span></p>
+        <p>Tax: <span id="tax">0.00</span></p>
+        <p>Discount: <span id="discount">0.00</span></p>
+        <p><strong>Total: <span id="total">0.00</span></strong></p>
+    </div>
+
+    <button type="submit">Update Invoice</button>
+    <a href="{{ url_for('index') }}" class="button-cancel">Cancel</a>
+</form>
+
+<script>
+function addRow() {
+    const tableBody = document.querySelector('#itemsTable tbody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td><input type="text" name="item_name[]" required></td>
+        <td><input type="number" name="item_qty[]" value="1" min="1" onchange="calculateTotals()"></td>
+        <td><input type="number" name="item_price[]" value="0.00" step="0.01" onchange="calculateTotals()"></td>
+        <td class="row-subtotal">0.00</td>
+        <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+    `;
+    tableBody.appendChild(row);
+    calculateTotals();
+}
+
+function removeRow(button) {
+    const row = button.closest('tr');
+    row.remove();
+    calculateTotals();
+}
+
+function calculateTotals() {
+    let subtotal = 0;
+    document.querySelectorAll('#itemsTable tbody tr').forEach(row => {
+        const qty = parseFloat(row.querySelector('[name="item_qty[]"]').value) || 0;
+        const price = parseFloat(row.querySelector('[name="item_price[]"]').value) || 0;
+        const rowSubtotal = qty * price;
+        row.querySelector('.row-subtotal').innerText = rowSubtotal.toFixed(2);
+        subtotal += rowSubtotal;
+    });
+
+    const taxRate = parseFloat(document.querySelector('[name="tax_rate"]').value) || 0;
+    const discountRate = parseFloat(document.querySelector('[name="discount_rate"]').value) || 0;
+
+    const tax = subtotal * (taxRate / 100);
+    const discount = subtotal * (discountRate / 100);
+    const total = subtotal + tax - discount;
+
+    document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+    document.getElementById('tax').innerText = tax.toFixed(2);
+    document.getElementById('discount').innerText = discount.toFixed(2);
+    document.getElementById('total').innerText = total.toFixed(2);
+}
+
+// Calculate totals on page load
+document.addEventListener('DOMContentLoaded', () => calculateTotals());
+</script>
+{% endblock %}

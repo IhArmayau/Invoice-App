@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Invoices</h2>
+
+{% if invoices %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Subtotal</th>
+            <th>Tax</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for invoice in invoices %}
+        {% set subtotal, tax, discount, total = calculate_invoice_totals(invoice) %}
+        <tr>
+            <td>{{ invoice.id }}</td>
+            <td>{{ invoice.client_name }}</td>
+            <td>{{ invoice.date_created.strftime("%Y-%m-%d") }}</td>
+            <td>{{ "%.2f"|format(subtotal) }}</td>
+            <td>{{ "%.2f"|format(tax) }}</td>
+            <td>{{ "%.2f"|format(discount) }}</td>
+            <td>{{ "%.2f"|format(total) }}</td>
+            <td>
+                <a href="{{ url_for('edit_invoice', invoice_id=invoice.id) }}">Edit</a> |
+                <form action="{{ url_for('delete_invoice', invoice_id=invoice.id) }}" method="POST" style="display:inline">
+                    <button type="submit" onclick="return confirm('Delete this invoice?')">Delete</button>
+                </form> |
+                <a href="{{ url_for('export_excel', invoice_id=invoice.id) }}">Excel</a> |
+                <a href="{{ url_for('export_pdf', invoice_id=invoice.id) }}">PDF</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No invoices found. <a href="{{ url_for('new_invoice') }}">Create one now</a>.</p>
+{% endif %}
+{% endblock %}

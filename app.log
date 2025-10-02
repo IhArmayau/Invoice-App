@@ -1,0 +1,288 @@
+2025-10-02 02:55:46,472 INFO: Default user created
+2025-10-02 02:55:46,601 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 02:55:46,602 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 02:55:46,605 INFO:  * Restarting with stat
+2025-10-02 02:55:49,689 WARNING:  * Debugger is active!
+2025-10-02 02:55:49,785 INFO:  * Debugger PIN: 116-502-028
+2025-10-02 02:56:39,434 INFO: 127.0.0.1 - - [02/Oct/2025 02:56:39] "[32mGET / HTTP/1.1[0m" 302 -
+2025-10-02 02:56:39,606 INFO: 127.0.0.1 - - [02/Oct/2025 02:56:39] "GET /login HTTP/1.1" 200 -
+2025-10-02 02:57:04,770 INFO: User logged in: IhArmayau
+2025-10-02 02:57:04,777 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-10-02 02:57:04,969 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:04] "GET / HTTP/1.1" 200 -
+2025-10-02 02:57:12,104 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:12] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 02:57:51,890 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:51] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 02:57:51,909 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:51] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 02:57:58,077 INFO: 127.0.0.1 - - [02/Oct/2025 02:57:58] "GET / HTTP/1.1" 200 -
+2025-10-02 02:58:02,278 INFO: 127.0.0.1 - - [02/Oct/2025 02:58:02] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 02:58:26,774 INFO: 127.0.0.1 - - [02/Oct/2025 02:58:26] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 02:58:26,796 INFO: 127.0.0.1 - - [02/Oct/2025 02:58:26] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 03:11:30,667 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 03:11:30,668 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 03:11:30,672 INFO:  * Restarting with stat
+2025-10-02 03:11:34,089 WARNING:  * Debugger is active!
+2025-10-02 03:11:34,139 INFO:  * Debugger PIN: 394-312-842
+2025-10-02 03:11:37,779 INFO: 127.0.0.1 - - [02/Oct/2025 03:11:37] "[32mGET /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 03:11:37,886 INFO: 127.0.0.1 - - [02/Oct/2025 03:11:37] "GET /login HTTP/1.1" 200 -
+2025-10-02 03:11:53,815 INFO: User logged in: IhArmayau
+2025-10-02 03:11:53,820 INFO: 127.0.0.1 - - [02/Oct/2025 03:11:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-10-02 03:11:53,999 INFO: 127.0.0.1 - - [02/Oct/2025 03:11:53] "GET / HTTP/1.1" 200 -
+2025-10-02 03:11:57,727 INFO: 127.0.0.1 - - [02/Oct/2025 03:11:57] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 03:12:18,619 INFO: Created invoice #1 for client Habibu Armayau Isah
+2025-10-02 03:12:18,625 INFO: 127.0.0.1 - - [02/Oct/2025 03:12:18] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 03:12:18,713 INFO: 127.0.0.1 - - [02/Oct/2025 03:12:18] "GET / HTTP/1.1" 200 -
+2025-10-02 03:12:35,659 INFO: Exported invoice #1 to PDF
+2025-10-02 03:12:35,662 INFO: 127.0.0.1 - - [02/Oct/2025 03:12:35] "GET /invoice/1/pdf HTTP/1.1" 200 -
+2025-10-02 03:13:33,637 INFO: User logged out: IhArmayau
+2025-10-02 03:13:33,662 INFO: 127.0.0.1 - - [02/Oct/2025 03:13:33] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-10-02 03:13:33,751 INFO: 127.0.0.1 - - [02/Oct/2025 03:13:33] "GET /login HTTP/1.1" 200 -
+2025-10-02 14:22:20,274 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:22:20,276 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:22:20,280 INFO:  * Restarting with stat
+2025-10-02 14:22:23,365 WARNING:  * Debugger is active!
+2025-10-02 14:22:23,455 INFO:  * Debugger PIN: 737-869-818
+2025-10-02 14:22:33,963 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:33] "[32mGET / HTTP/1.1[0m" 302 -
+2025-10-02 14:22:34,167 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:34] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:22:34,319 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:34] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:22:34,329 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:34] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:22:34,650 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:34] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=cqDmPDxenRgGxtJVEuKd HTTP/1.1" 200 -
+2025-10-02 14:22:37,349 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:37] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:22:37,428 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:22:37,449 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:22:37,519 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=cqDmPDxenRgGxtJVEuKd HTTP/1.1[0m" 304 -
+2025-10-02 14:22:37,629 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:37] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:22:39,528 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:39] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:22:39,590 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:39] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:22:39,609 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:39] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:22:39,641 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:39] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=cqDmPDxenRgGxtJVEuKd HTTP/1.1[0m" 304 -
+2025-10-02 14:22:39,737 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:39] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:22:46,589 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:46] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:22:46,858 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:46] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-10-02 14:22:46,859 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:46] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-10-02 14:22:46,940 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:46] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=cqDmPDxenRgGxtJVEuKd HTTP/1.1" 200 -
+2025-10-02 14:22:47,138 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:47] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-10-02 14:22:51,734 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:51] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:22:51,794 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:51] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:22:51,806 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:51] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:22:51,877 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:51] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=cqDmPDxenRgGxtJVEuKd HTTP/1.1[0m" 304 -
+2025-10-02 14:22:51,963 INFO: 127.0.0.1 - - [02/Oct/2025 14:22:51] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:26:51,154 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:26:51,155 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:26:51,159 INFO:  * Restarting with stat
+2025-10-02 14:26:54,264 WARNING:  * Debugger is active!
+2025-10-02 14:26:54,305 INFO:  * Debugger PIN: 584-881-972
+2025-10-02 14:26:57,722 INFO: 127.0.0.1 - - [02/Oct/2025 14:26:57] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:26:57,823 INFO: 127.0.0.1 - - [02/Oct/2025 14:26:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:26:57,827 INFO: 127.0.0.1 - - [02/Oct/2025 14:26:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:26:58,117 INFO: 127.0.0.1 - - [02/Oct/2025 14:26:58] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=Tqckn2hWZBeazZLzVpei HTTP/1.1" 200 -
+2025-10-02 14:26:58,226 INFO: 127.0.0.1 - - [02/Oct/2025 14:26:58] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:27:00,188 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:00] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:27:00,242 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:00] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:27:00,260 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:00] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:27:00,339 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:00] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=Tqckn2hWZBeazZLzVpei HTTP/1.1[0m" 304 -
+2025-10-02 14:27:00,419 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:00] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:27:02,556 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:02] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:27:02,607 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:02] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:27:02,614 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:02] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:27:02,685 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:02] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=Tqckn2hWZBeazZLzVpei HTTP/1.1[0m" 304 -
+2025-10-02 14:27:02,760 INFO: 127.0.0.1 - - [02/Oct/2025 14:27:02] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:37:51,087 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:37:51,088 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:37:51,092 INFO:  * Restarting with stat
+2025-10-02 14:37:55,244 WARNING:  * Debugger is active!
+2025-10-02 14:37:55,384 INFO:  * Debugger PIN: 603-309-364
+2025-10-02 14:37:59,000 INFO: 127.0.0.1 - - [02/Oct/2025 14:37:59] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:37:59,105 INFO: 127.0.0.1 - - [02/Oct/2025 14:37:59] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:37:59,108 INFO: 127.0.0.1 - - [02/Oct/2025 14:37:59] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:37:59,233 INFO: 127.0.0.1 - - [02/Oct/2025 14:37:59] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=1w5pnwICwVcFICN0ZxKU HTTP/1.1" 200 -
+2025-10-02 14:37:59,410 INFO: 127.0.0.1 - - [02/Oct/2025 14:37:59] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:38:01,213 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:01] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:38:01,266 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:01] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:38:01,278 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:01] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:38:01,319 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:01] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=1w5pnwICwVcFICN0ZxKU HTTP/1.1[0m" 304 -
+2025-10-02 14:38:01,410 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:01] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:38:02,928 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:02] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:38:02,988 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:02] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:38:03,011 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:03] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:38:03,041 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:03] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=1w5pnwICwVcFICN0ZxKU HTTP/1.1[0m" 304 -
+2025-10-02 14:38:03,137 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:03] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:38:04,025 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:04] "[32mGET / HTTP/1.1[0m" 302 -
+2025-10-02 14:38:05,623 INFO: 127.0.0.1 - - [02/Oct/2025 14:38:05] "[32mGET /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 14:46:00,086 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:46:00,087 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:46:00,091 INFO:  * Restarting with stat
+2025-10-02 14:46:03,934 WARNING:  * Debugger is active!
+2025-10-02 14:46:04,006 INFO:  * Debugger PIN: 143-444-982
+2025-10-02 14:46:54,136 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "[32mGET / HTTP/1.1[0m" 302 -
+2025-10-02 14:46:54,324 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:46:54,445 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-10-02 14:46:54,453 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-10-02 14:46:54,636 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=v6cNZfTfsCRIJz3eAyJF HTTP/1.1" 200 -
+2025-10-02 14:46:54,720 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:54] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-10-02 14:46:57,439 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:57] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:46:57,505 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:46:57,511 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:46:57,556 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=v6cNZfTfsCRIJz3eAyJF HTTP/1.1[0m" 304 -
+2025-10-02 14:46:57,734 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:57] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:46:58,809 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:58] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:46:58,897 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:58] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:46:58,906 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:58] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:46:59,002 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:59] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png&s=v6cNZfTfsCRIJz3eAyJF HTTP/1.1[0m" 304 -
+2025-10-02 14:46:59,117 INFO: 127.0.0.1 - - [02/Oct/2025 14:46:59] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:51:59,535 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:51:59,537 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:51:59,541 INFO:  * Restarting with stat
+2025-10-02 14:52:02,843 WARNING:  * Debugger is active!
+2025-10-02 14:52:02,889 INFO:  * Debugger PIN: 128-963-112
+2025-10-02 14:52:11,768 INFO: 127.0.0.1 - - [02/Oct/2025 14:52:11] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+2025-10-02 14:52:11,915 INFO: 127.0.0.1 - - [02/Oct/2025 14:52:11] "[36mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:52:11,922 INFO: 127.0.0.1 - - [02/Oct/2025 14:52:11] "[36mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-10-02 14:52:12,107 INFO: 127.0.0.1 - - [02/Oct/2025 14:52:12] "GET /login?__debugger__=yes&cmd=resource&f=console.png&s=DDJVeZvXCdGacEKTT2VF HTTP/1.1" 200 -
+2025-10-02 14:52:12,524 INFO: 127.0.0.1 - - [02/Oct/2025 14:52:12] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-10-02 14:56:34,073 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 14:56:34,075 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 14:56:34,079 INFO:  * Restarting with stat
+2025-10-02 14:56:37,518 WARNING:  * Debugger is active!
+2025-10-02 14:56:37,595 INFO:  * Debugger PIN: 592-127-113
+2025-10-02 14:56:38,910 INFO: 127.0.0.1 - - [02/Oct/2025 14:56:38] "GET /login HTTP/1.1" 200 -
+2025-10-02 14:56:38,979 INFO: 127.0.0.1 - - [02/Oct/2025 14:56:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-10-02 14:56:39,080 INFO: 127.0.0.1 - - [02/Oct/2025 14:56:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-02 14:57:04,793 INFO: User logged in: IhArmayau
+2025-10-02 14:57:04,798 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-10-02 14:57:05,007 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:05] "GET / HTTP/1.1" 200 -
+2025-10-02 14:57:05,105 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 14:57:38,993 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:38] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 14:57:39,037 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:39] "[33mGET /static/js/invoice.js HTTP/1.1[0m" 404 -
+2025-10-02 14:57:39,051 INFO: 127.0.0.1 - - [02/Oct/2025 14:57:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:03:58,109 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:03:58,110 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:03:58,115 INFO:  * Restarting with stat
+2025-10-02 15:04:01,843 WARNING:  * Debugger is active!
+2025-10-02 15:04:01,911 INFO:  * Debugger PIN: 655-455-741
+2025-10-02 15:04:11,240 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:11] "[32mGET /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 15:04:11,326 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:11] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:04:11,412 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:04:27,065 INFO: User logged in: IhArmayau
+2025-10-02 15:04:27,068 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:27] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-10-02 15:04:27,229 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:27] "GET / HTTP/1.1" 200 -
+2025-10-02 15:04:27,308 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:04:34,869 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:34] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 15:04:34,920 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:34] "[33mGET /static/js/invoice.js HTTP/1.1[0m" 404 -
+2025-10-02 15:04:34,929 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:04:46,703 INFO: Created invoice #2
+2025-10-02 15:04:46,706 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:46] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 15:04:46,751 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:46] "GET / HTTP/1.1" 200 -
+2025-10-02 15:04:46,825 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:04:51,969 INFO: 127.0.0.1 - - [02/Oct/2025 15:04:51] "GET /invoice/1/pdf HTTP/1.1" 200 -
+2025-10-02 15:17:44,586 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:17:44,587 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:17:44,591 INFO:  * Restarting with stat
+2025-10-02 15:17:48,130 WARNING:  * Debugger is active!
+2025-10-02 15:17:48,178 INFO:  * Debugger PIN: 629-377-022
+2025-10-02 15:17:52,664 INFO: 127.0.0.1 - - [02/Oct/2025 15:17:52] "[32mGET / HTTP/1.1[0m" 302 -
+2025-10-02 15:17:52,746 INFO: 127.0.0.1 - - [02/Oct/2025 15:17:52] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:17:52,878 INFO: 127.0.0.1 - - [02/Oct/2025 15:17:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:18:04,868 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-10-02 15:18:05,050 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:05] "GET / HTTP/1.1" 200 -
+2025-10-02 15:18:05,167 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:18:10,405 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:10] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 15:18:10,452 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:18:55,721 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:55] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 15:18:55,765 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:55] "GET / HTTP/1.1" 200 -
+2025-10-02 15:18:55,824 INFO: 127.0.0.1 - - [02/Oct/2025 15:18:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:19:03,692 INFO: 127.0.0.1 - - [02/Oct/2025 15:19:03] "GET /invoice/3/pdf HTTP/1.1" 200 -
+2025-10-02 15:19:54,552 INFO: 127.0.0.1 - - [02/Oct/2025 15:19:54] "GET / HTTP/1.1" 200 -
+2025-10-02 15:19:54,655 INFO: 127.0.0.1 - - [02/Oct/2025 15:19:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:20:02,971 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:02] "[32mPOST /invoice/2/delete HTTP/1.1[0m" 302 -
+2025-10-02 15:20:03,004 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:03] "GET / HTTP/1.1" 200 -
+2025-10-02 15:20:03,088 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:20:07,177 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:07] "GET /invoice/3/excel HTTP/1.1" 200 -
+2025-10-02 15:20:13,306 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:13] "GET / HTTP/1.1" 200 -
+2025-10-02 15:20:13,367 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:20:21,511 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:21] "GET / HTTP/1.1" 200 -
+2025-10-02 15:20:21,557 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:20:27,453 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:27] "GET / HTTP/1.1" 200 -
+2025-10-02 15:20:27,512 INFO: 127.0.0.1 - - [02/Oct/2025 15:20:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:21:21,655 INFO: 127.0.0.1 - - [02/Oct/2025 15:21:21] "GET /invoice/new HTTP/1.1" 200 -
+2025-10-02 15:21:21,794 INFO: 127.0.0.1 - - [02/Oct/2025 15:21:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:24:16,959 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:16] "[32mPOST /invoice/new HTTP/1.1[0m" 302 -
+2025-10-02 15:24:17,049 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:17] "GET / HTTP/1.1" 200 -
+2025-10-02 15:24:17,162 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:24:31,216 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-10-02 15:24:31,239 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:31] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:24:31,280 INFO: 127.0.0.1 - - [02/Oct/2025 15:24:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:37:24,677 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:37:24,679 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:37:24,683 INFO:  * Restarting with stat
+2025-10-02 15:37:28,744 WARNING:  * Debugger is active!
+2025-10-02 15:37:28,793 INFO:  * Debugger PIN: 187-145-808
+2025-10-02 15:37:29,010 INFO: 127.0.0.1 - - [02/Oct/2025 15:37:29] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:37:29,467 INFO: 127.0.0.1 - - [02/Oct/2025 15:37:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:39:48,859 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:39:48,861 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:39:48,865 INFO:  * Restarting with stat
+2025-10-02 15:39:52,411 WARNING:  * Debugger is active!
+2025-10-02 15:39:52,481 INFO:  * Debugger PIN: 834-523-547
+2025-10-02 15:39:54,840 INFO: 127.0.0.1 - - [02/Oct/2025 15:39:54] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:39:54,962 INFO: 127.0.0.1 - - [02/Oct/2025 15:39:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:45:05,646 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:45:05,647 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:45:05,651 INFO:  * Restarting with stat
+2025-10-02 15:45:08,963 WARNING:  * Debugger is active!
+2025-10-02 15:45:09,026 INFO:  * Debugger PIN: 103-663-767
+2025-10-02 15:45:09,165 INFO: 127.0.0.1 - - [02/Oct/2025 15:45:09] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:45:09,262 INFO: 127.0.0.1 - - [02/Oct/2025 15:45:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:46:29,707 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:46:29,707 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:46:29,710 INFO:  * Restarting with stat
+2025-10-02 15:46:33,216 WARNING:  * Debugger is active!
+2025-10-02 15:46:33,257 INFO:  * Debugger PIN: 346-096-093
+2025-10-02 15:46:33,335 INFO: 127.0.0.1 - - [02/Oct/2025 15:46:33] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:46:33,384 INFO: 127.0.0.1 - - [02/Oct/2025 15:46:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:46:36,086 INFO: 127.0.0.1 - - [02/Oct/2025 15:46:36] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:46:36,144 INFO: 127.0.0.1 - - [02/Oct/2025 15:46:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:48:18,240 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:48:18,241 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:48:18,245 INFO:  * Restarting with stat
+2025-10-02 15:48:21,682 WARNING:  * Debugger is active!
+2025-10-02 15:48:21,777 INFO:  * Debugger PIN: 107-515-364
+2025-10-02 15:48:22,342 INFO: 127.0.0.1 - - [02/Oct/2025 15:48:22] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:48:22,396 INFO: 127.0.0.1 - - [02/Oct/2025 15:48:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:49:57,909 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:49:57,910 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:49:57,915 INFO:  * Restarting with stat
+2025-10-02 15:50:01,584 WARNING:  * Debugger is active!
+2025-10-02 15:50:01,633 INFO:  * Debugger PIN: 486-214-618
+2025-10-02 15:50:01,710 INFO: 127.0.0.1 - - [02/Oct/2025 15:50:01] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:50:01,820 INFO: 127.0.0.1 - - [02/Oct/2025 15:50:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:52:33,043 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:52:33,044 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:52:33,048 INFO:  * Restarting with stat
+2025-10-02 15:52:36,721 WARNING:  * Debugger is active!
+2025-10-02 15:52:36,771 INFO:  * Debugger PIN: 107-781-329
+2025-10-02 15:52:38,134 INFO: 127.0.0.1 - - [02/Oct/2025 15:52:38] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:52:38,212 INFO: 127.0.0.1 - - [02/Oct/2025 15:52:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-10-02 15:54:05,779 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-02 15:54:05,780 INFO: [33mPress CTRL+C to quit[0m
+2025-10-02 15:54:05,784 INFO:  * Restarting with stat
+2025-10-02 15:54:09,477 WARNING:  * Debugger is active!
+2025-10-02 15:54:09,517 INFO:  * Debugger PIN: 532-589-406
+2025-10-02 15:54:09,589 INFO: 127.0.0.1 - - [02/Oct/2025 15:54:09] "GET /login HTTP/1.1" 200 -
+2025-10-02 15:54:09,639 INFO: 127.0.0.1 - - [02/Oct/2025 15:54:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

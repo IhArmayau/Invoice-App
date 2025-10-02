@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ COMPANY.name }} - Invoice App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ COMPANY.name }}</h1>
+        <p>{{ COMPANY.address }} | {{ COMPANY.phone }}</p>
+        {% if session.get('username') %}
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('new_invoice') }}">New Invoice</a>
+                <a href="{{ url_for('logout') }}">Logout ({{ session.username }})</a>
+            </nav>
+        {% endif %}
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ COMPANY.name }} - {{ datetime.utcnow().year }}</p>
+    </footer>
+</body>
+</html>
